@@ -25,16 +25,21 @@ app.use(express.static(path.join(__dirname, 'public')));
 // http://localhost:3000/stylesheets/style.css
 
 app.use(express.static('files'));
+app.use('/page', express.static('page-local'));
 
 app.use('/', index);
 app.use('/users', users);
 
-// catch 404 and forward to error handler
 app.use(function(req, res, next) {
-  var err = new Error('Not Found');
-  err.status = 404;
-  next(err);
+  res.status(404).send('Sorry cant find that!');
 });
+
+// // catch 404 and forward to error handler
+// app.use(function(req, res, next) {
+//   var err = new Error('Not Found');
+//   err.status = 404;
+//   next(err);
+// });
 
 // error handler
 app.use(function(err, req, res, next) {
