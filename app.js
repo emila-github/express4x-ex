@@ -20,7 +20,9 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
+// 托管静态文件
 app.use(express.static(path.join(__dirname, 'public')));
+// http://localhost:3000/stylesheets/style.css
 
 app.use('/', index);
 app.use('/users', users);
