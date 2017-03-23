@@ -24,6 +24,8 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 // http://localhost:3000/stylesheets/style.css
 
+app.use(express.static('files'));
+
 app.use('/', index);
 app.use('/users', users);
 
