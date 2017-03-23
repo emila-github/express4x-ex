@@ -6,4 +6,19 @@ router.get('/', function(req, res, next) {
   res.send('respond with a resource');
 });
 
+router.post('/user', function(req, res, next) {
+  res.send('Got a POST request at /user');
+});
+
+// /user 节点接受 PUT 请求
+router.put('/user', function (req, res) {
+  res.send('Got a PUT request at /user');
+});
+
+// /user 节点接受 DELETE 请求
+router.delete('/user', function (req, res) {
+  res.send('Got a DELETE request at /user');
+});
+
+
 module.exports = router;
