@@ -1,9 +1,19 @@
 var express = require('express');
 var router = express.Router();
 
+// 该路由使用的中间件
+router.use(function timeLog(req, res, next) {
+  console.log('Time: ', Date.now());
+  next();
+});
+
 /* GET users listing. */
 router.get('/', function(req, res, next) {
   res.send('respond with a resource');
+});
+
+router.get('/user', function(req, res, next) {
+  res.send('Got a GET request at /user');
 });
 
 router.post('/user', function(req, res, next) {
