@@ -38,7 +38,18 @@ app.use(express.static(path.join(__dirname, 'public')));
 // http://localhost:3000/stylesheets/style.css
 
 app.use(express.static('files'));
-app.use('/page', express.static('page-local'));
+var staticOptions = {
+  dotfiles: 'ignore',
+  etag: false,
+  extensions: ['htm', 'html'],
+  index: false,
+  maxAge: '1d',
+  redirect: false,
+  setHeaders: function (res, path, stat) {
+    res.set('x-timestamp', Date.now());
+  }
+}
+app.use('/page', express.static('page-local', staticOptions));
 
 app.use('/', index);
 app.use('/users', users);
