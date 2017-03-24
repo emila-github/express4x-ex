@@ -60,7 +60,17 @@ router.get('/example/json', function (req, res, next) {
   console.log('response will be sent by the next function ...');
   next();
 }, function (req, res) {
-  res.json(obj);
+  // res.json(obj);
+  var data = JSON.stringify(obj)
+  res.contentType('json');
+  res.send(data)
+});
+
+router.get('/example/jsonp', function (req, res, next) {
+  console.log('response will be sent by the next function ...');
+  next();
+}, function (req, res) {
+  res.jsonp(obj);
 });
 
 

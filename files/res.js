@@ -49,6 +49,20 @@ $(function() {
        data: "name=John&location=Boston",
        success: function(msg){
          alert( "Data Saved: " + msg );
+         console.log('json=%o', msg);
+       }
+    });
+  });
+
+  $('.jsonp').on('click', function() {
+    $.ajax({
+       type: "GET",
+       dataType: "jsonp",
+       url: "res/example/jsonp",
+       data: "name=John&location=Boston",
+       success: function(msg){
+         alert( "Data Saved: " + msg );
+         console.log('jsonp=%o', msg);
        }
     });
   });
