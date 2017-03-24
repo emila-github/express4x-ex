@@ -9,7 +9,7 @@ npm install
 $ DEBUG=express-ex2 npm start
 Windows 平台使用如下命令：
 
-> set DEBUG=express-ex2 & npm start
+> set DEBUG=express4x-ex & npm start
 
 打开：
 [http://localhost:3000/](http://localhost:3000/)
