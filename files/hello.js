@@ -1,1 +1,1 @@
-alert('hello 静态文件')；
+alert('hello 静态文件');
