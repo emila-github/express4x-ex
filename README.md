@@ -1,3 +1,5 @@
+expressjs 练习
+
 ## 安装依赖包 ##
 
 npm install
@@ -8,3 +10,6 @@ $ DEBUG=express-ex2 npm start
 Windows 平台使用如下命令：
 
 > set DEBUG=express-ex2 & npm start
+
+打开：
+[http://localhost:3000/](http://localhost:3000/)
