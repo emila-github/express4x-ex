@@ -68,7 +68,15 @@ router.use('/user/:id', function(req, res, next) { // // 一个中间件栈，�
 // 一个中间件栈，处理指向 /user/:id 的 GET 请求
 router.get('/userverb/:id', function (req, res, next) {
   // 如果 user id 为 0, 跳到下一个路由
-  if (req.params.id == 0) next('route');
+  if (req.params.id == 0) {
+  	next('route');
+  	console.log('next("route") before;')
+  }
+
+  if (req.params.id == 2) {
+  	next('err');
+  	console.log('next("err") before;')
+  }
   // 否则将控制权交给栈中下一个中间件
   else next(); //
 }, function (req, res, next) {
