@@ -52,7 +52,7 @@ router.use('/user/:id', function(req, res, next) { // // 一个中间件栈，�
 // 为路径定义多个路由成为可能 
 // 第二个路由虽然不会带来任何问题，但却永远不会被调用，因为第一个路由已经终止了请求-响应循环。
 // 一个中间件栈，处理指向 /user/test/:id 的 GET 请求
-app.get('/user/test/:id', function (req, res, next) {
+router.get('/user/test/:id', function (req, res, next) {
   console.log('ID:', req.params.id);
   next();
 }, function (req, res, next) {
@@ -60,7 +60,7 @@ app.get('/user/test/:id', function (req, res, next) {
 });
 
 // 处理 /user/test/:id， 打印出用户 id
-app.get('/user/test/:id', function (req, res, next) {
+router.get('/user/test/:id', function (req, res, next) {
   res.end(req.params.id);
 });
 
