@@ -1,0 +1,14 @@
+extends layout
+block scriptHeader
+  script(src='../res.js')
+block content
+  h1= title
+  p Welcome to #{title}
+  div
+   a(href='javascript:;', class='link1') /example/a
+  div
+   a(href='javascript:;', class='link2') /example/b
+  div
+   a(href='javascript:;', class='link3') /example/c
+  div
+   a(href='javascript:;', class='link4') /example/d

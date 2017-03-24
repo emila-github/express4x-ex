@@ -6,6 +6,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
 var index = require('./routes/index');
+var res = require('./routes/res');
 var users = require('./routes/users');
 
 var app = express();
@@ -29,6 +30,7 @@ app.use('/page', express.static('page-local'));
 
 app.use('/', index);
 app.use('/users', users);
+app.use('/res', res);
 
 app.use(function(req, res, next) {
   res.status(404).send('Sorry cant find that!');
