@@ -55,4 +55,14 @@ router.get('/example/d', [cb0, cb1], function (req, res, next) {
   res.send('Hello from D!');
 });
 
+var obj = {a: 'a1', b: 'b1'};
+router.get('/example/json', function (req, res, next) {
+  console.log('response will be sent by the next function ...');
+  next();
+}, function (req, res) {
+  res.json(obj);
+});
+
+
+
 module.exports = router;

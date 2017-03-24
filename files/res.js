@@ -3,7 +3,7 @@ $(function() {
   $('.link1').on('click', function() {
     $.ajax({
        type: "GET",
-       url: "example/a",
+       url: "res/example/a",
        data: "name=John&location=Boston",
        success: function(msg){
          alert( "Data Saved: " + msg );
@@ -13,7 +13,7 @@ $(function() {
   $('.link2').on('click', function() {
     $.ajax({
        type: "GET",
-       url: "example/b",
+       url: "res/example/b",
        data: "name=John&location=Boston",
        success: function(msg){
          alert( "Data Saved: " + msg );
@@ -23,7 +23,7 @@ $(function() {
   $('.link3').on('click', function() {
     $.ajax({
        type: "GET",
-       url: "example/c",
+       url: "res/example/c",
        data: "name=John&location=Boston",
        success: function(msg){
          alert( "Data Saved: " + msg );
@@ -33,12 +33,26 @@ $(function() {
   $('.link4').on('click', function() {
     $.ajax({
        type: "GET",
-       url: "example/d",
+       url: "res/example/d",
        data: "name=John&location=Boston",
        success: function(msg){
          alert( "Data Saved: " + msg );
        }
     });
   });
+
+  $('.json').on('click', function() {
+    $.ajax({
+       type: "GET",
+       dataType: "json",
+       url: "res/example/json",
+       data: "name=John&location=Boston",
+       success: function(msg){
+         alert( "Data Saved: " + msg );
+       }
+    });
+  });
+
+
 });
 
