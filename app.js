@@ -32,6 +32,7 @@ app.route('/book')
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
+// 加载用于解析 cookie 的中间件
 app.use(cookieParser());
 // 托管静态文件
 app.use(express.static(path.join(__dirname, 'public')));
